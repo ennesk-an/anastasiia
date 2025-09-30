@@ -237,7 +237,7 @@
                <div class="col-md-8 col-sm-6">
                   <form>
                      <input type="email" name="email" placeholder="Залиште Свою Пошту" />
-                     <button>Відправити</button>
+                     <button href="javascript:void(0)" onclick="goToCheckout('button1')" data-product="Записатися">Відправити</button>
                   </form>
                </div>
             </div>
@@ -319,5 +319,14 @@
              });
          })
       </script>
+   <script src="analytics.js"></script>
+  <script>
+    document.querySelectorAll(".buy-btn").forEach(btn => {
+      btn.addEventListener("click", function() {
+        let product = this.getAttribute("data-product");
+        document.getElementById("productName").textContent = product;
+      });
+    });
+  </script>
    </body>
 </html>
